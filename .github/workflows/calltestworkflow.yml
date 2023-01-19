@@ -1,0 +1,20 @@
+name : call test worlkflow
+
+on:
+ push: 
+  branches: main
+  
+  
+jobs:
+  
+  callTestWorkflow:
+  uses: test-workflows/.github/workflows/test.yml
+  with:
+    workingDirectory: "./"
+    inputDownloadname: inputArtifact
+    inputArtifactPath: inputArtifactPath
+    inputCompression: inputCompress
+    outputDownloadname: outputArtifact
+    outputArtifactPath: outputArtifactPath
+    outputCompression: outputCompress
+    CompressArtifacts: true
