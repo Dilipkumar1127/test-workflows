@@ -53,6 +53,7 @@ jobs:
           path: CompressArtifactDirectory
           
   DownloadArtifact:
+      needs: Build-Artifact
       runs-on: ubuntu-latest
       steps:
 
