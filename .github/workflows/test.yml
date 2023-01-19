@@ -18,7 +18,7 @@ jobs:
       - name: Get Working Dir
         run: pwd
       - name: Compress Artifact
-        run: tar -cvf CompressWorld.tar /Downloads/World.txt
+        run: tar -cvf CompressWorld.tar ./Downloads/World.txt
         
       
       - name: publish Artifact
