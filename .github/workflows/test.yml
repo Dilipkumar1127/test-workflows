@@ -15,9 +15,11 @@ jobs:
         run: |
           cd Downloads
           echo 'Hello World' > World.txt
+      - name: Compress Artifact
+        run: tar -cvf CompressWorld.tar World.txt
       
       - name: publish Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: WorldFile
+          name: CompressWorld
           path: Downloads
