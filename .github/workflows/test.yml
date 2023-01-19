@@ -4,25 +4,51 @@ on:
   push: 
     branches: [ main ]
   
+  inputs:
+    workingDirectory:
+      type: string
+      default: "./"
+    inputDownloadname: 
+      type: string 
+    inputArtifactPath: 
+      type: string 
+    inputCompression:
+      type: string
+
+    outputDownloadname: 
+      type: string 
+    outputArtifactPath: 
+      type: string 
+    outputCompression:
+      type: string
+
+
+    CompressArtifacts:
+      type: boolean
+
+
 jobs:
    
   Build-Artifact:
     runs-on: ubuntu-latest
     steps:
+      
       - name: make Dir
-        run: mkdir Downloads
+        run: mkdir CompressArtifactDirectory
+      
       - name: Create files
         run: |
-          cd Downloads
-          echo 'Hello World' > World.txt
+          cd CompressArtifactDirectory
+          echo 'Hello World' > ${{ inputs.outputDownloadname }}
+      
       - name: Get Working Dir
         run: pwd
-      - name: Compress Artifact
-        run: tar -cvf CompressWorld.tar ./Downloads/World.txt
-        
       
+      - name: Compress Artifact
+        run: tar -cvf ${{ inputs.outputCompression }}.tar ./CompressArtifactDirectory/${{ inputs.outputDownloadname }}
+        
       - name: publish Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: CompressWorld
-          path: Downloads
+          name: ${{ inputs.outputCompression }}
+          path: CompressArtifactDirectory
