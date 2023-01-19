@@ -59,8 +59,8 @@ jobs:
         - name: Download Compressed Artifact
           uses: actions/download-artifact@v3
           with:
-            name: ${{ inputs.inputCompression }}
-            path: ./CompressArtifactDirectory/${{ inputs.outputDownloadname }}
+            name: ${{ inputs.outputCompression }}
+            path: ./CompressArtifactDirectory
         
         - name: Extract Compressed Artifact
           run: tar -xvf ${{ inputs.inputCompression }}.tar ${{ inputs.workingDirectory }}
