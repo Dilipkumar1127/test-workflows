@@ -8,7 +8,7 @@ on:
 jobs:
   
   callTestWorkflow:
-   uses: Dilipkumar1127/test-workflows/blob/main/.github/workflows/test.yml@main
+   uses: Dilipkumar1127/test-workflows/.github/workflows/test.yml@main
    with:
      workingDirectory: "./"
      inputDownloadname: inputArtifact
