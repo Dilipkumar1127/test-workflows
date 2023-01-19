@@ -60,7 +60,7 @@ jobs:
           uses: actions/download-artifact@v3
           with:
             name: ${{ inputs.outputCompression }}
-            path: ./CompressArtifactDirectory
+            path: CompressArtifactDirectory
         
         - name: Extract Compressed Artifact
           run: tar -xvf ${{ inputs.inputCompression }}.tar ${{ inputs.workingDirectory }}
