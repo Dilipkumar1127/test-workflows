@@ -61,6 +61,9 @@ jobs:
           with:
             name: ${{ inputs.outputCompression }}
             path: CompressArtifactDirectory
+            
+        - name: list
+          run: ls -R
         
         - name: Extract Compressed Artifact
           run: tar -xvf ${{ inputs.outputCompression }}.tar ${{ inputs.workingDirectory }}
