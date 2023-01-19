@@ -8,13 +8,13 @@ on:
 jobs:
   
   callTestWorkflow:
-  uses: test-workflows/.github/workflows/test.yml
-  with:
-    workingDirectory: "./"
-    inputDownloadname: inputArtifact
-    inputArtifactPath: inputArtifactPath
-    inputCompression: inputCompress
-    outputDownloadname: outputArtifact
-    outputArtifactPath: outputArtifactPath
-    outputCompression: outputCompress
-    CompressArtifacts: true
+   uses: test-workflows/.github/workflows/test.yml@main
+   with:
+     workingDirectory: "./"
+     inputDownloadname: inputArtifact
+     inputArtifactPath: inputArtifactPath
+     inputCompression: inputCompress
+     outputDownloadname: outputArtifact
+     outputArtifactPath: outputArtifactPath
+     outputCompression: outputCompress
+     CompressArtifacts: true
