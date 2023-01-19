@@ -51,3 +51,22 @@ jobs:
         with:
           name: ${{ inputs.outputCompression }}
           path: CompressArtifactDirectory
+          
+  DownloadArtifact:
+      runs-on: ubuntu-latest
+      steps:
+
+        - name: Download Compressed Artifact
+          uses: actions/download-artifact@v3
+          with:
+            name: ${{ inputs.inputCompression }}
+            path: ./CompressArtifactDirectory/${{ inputs.outputDownloadname }}
+        
+        - name: Extract Compressed Artifact
+          run: tar -xvf ${{ inputs.inputCompression }}.tar ${{ inputs.workingDirectory }}
+      
+        - name: publish Artifact
+          uses: actions/upload-artifact@v3
+          with:
+            name: ${{ inputs.outputCompression }}
+            path: ${{ inputs.workingDirectory }}
