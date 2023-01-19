@@ -4,27 +4,27 @@ on:
   push: 
     branches: [ main ]
   
-  inputs:
-    workingDirectory:
-      type: string
-      default: "./"
-    inputDownloadname: 
-      type: string 
-    inputArtifactPath: 
-      type: string 
-    inputCompression:
-      type: string
+    inputs:
+      workingDirectory:
+        type: string
+        default: "./"
+      inputDownloadname: 
+        type: string 
+      inputArtifactPath: 
+        type: string 
+      inputCompression:
+        type: string
 
-    outputDownloadname: 
-      type: string 
-    outputArtifactPath: 
-      type: string 
-    outputCompression:
-      type: string
+      outputDownloadname: 
+        type: string 
+      outputArtifactPath: 
+        type: string 
+      outputCompression:
+        type: string
 
 
-    CompressArtifacts:
-      type: boolean
+      CompressArtifacts:
+        type: boolean
 
 
 jobs:
