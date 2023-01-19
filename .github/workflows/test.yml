@@ -1,1 +1,23 @@
+name: publish Git Artifact
 
+on: 
+  push: 
+    branches: [ main ]
+  
+jobs:
+   
+  Build-Artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: make Dir
+        run: mkdir Downloads
+      - name: Create files
+        run: |
+          cd Downloads
+          echo 'Hello World' > World.txt
+      
+      - name: publish Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: WorldFile
+          path: Downloads
