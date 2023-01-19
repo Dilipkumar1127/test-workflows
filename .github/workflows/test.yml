@@ -63,7 +63,7 @@ jobs:
             path: CompressArtifactDirectory
         
         - name: Extract Compressed Artifact
-          run: tar -xvf ${{ inputs.inputCompression }}.tar ${{ inputs.workingDirectory }}
+          run: tar -xvf ${{ inputs.outputCompression }}.tar ${{ inputs.workingDirectory }}
       
         - name: publish Artifact
           uses: actions/upload-artifact@v3
