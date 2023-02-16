@@ -3,7 +3,7 @@ name: pullrequest scan
 on:
  pull_request: 
   branches: main
-  paths: test.yaml
+  paths: test.yml
   
   
 jobs: 
