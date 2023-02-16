@@ -2,8 +2,9 @@ name: pullrequest scan
 
 on:
  pull_request: 
-  branches: main
-  paths: test.yml
+   types: [opened, reopened]
+   branches: main
+   paths: 'test.yml'
   
   
 jobs: 
