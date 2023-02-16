@@ -1,12 +1,13 @@
 name: pullrequest scan
 
 on:
+ push: 
  pull_request: 
    types: [opened, reopened]
-   branches: main
-   paths: 'test.yml'
-  
-  
+   branches: 
+     - main
+   paths: 
+     - 'test.yml'
 jobs: 
   List:
     runs-on: ubuntu-latest
