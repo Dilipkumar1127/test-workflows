@@ -1,4 +1,4 @@
-name: publish Git Artifact
+name: publish Git Artifactsss
 
 on: 
   workflow_call:
