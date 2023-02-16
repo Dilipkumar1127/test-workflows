@@ -7,6 +7,9 @@ on:
   
   
 jobs: 
-  callTestWorkflow:
-  runs-on: ubuntu-latest
-    run : ls
+  List:
+    runs-on: ubuntu-latest
+    steps:
+      
+      - name: List Dir
+        run: ls
