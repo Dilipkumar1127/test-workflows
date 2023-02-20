@@ -15,3 +15,6 @@ jobs:
       
       - name: List Dir
         run: ls
+        
+      - name: run unit tests
+        run: npm run test
